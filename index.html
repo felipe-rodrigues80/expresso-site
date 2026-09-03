@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Expresso Gás | Água e Gás com entrega rápida</title>
     <style>
         * {
@@ -18,363 +18,368 @@
             scroll-behavior: smooth;
         }
 
-        /* NAVBAR - VERSÃO CELULAR (mais compacta) */
         .navbar {
             background: linear-gradient(135deg, #0A2B4E 0%, #1A4A7A 100%);
-            padding: 0.5rem 1rem;
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 2rem;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 0.8rem;
+            justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
             border-bottom: 2px solid #F97316;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
             flex-wrap: wrap;
         }
 
-        /* LOGO MENOR NO CELULAR */
+        /* ESTILO DA SUA LOGO - AJUSTE AQUI O TAMANHO SE NECESSÁRIO */
         .logo-img {
-            height: 50px;
+            height: 100px;
             width: auto;
             object-fit: contain;
         }
 
         .tagline {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: #FFD6B0;
             font-weight: 400;
             border-left: 1px solid #F97316;
-            padding-left: 0.6rem;
+            padding-left: 0.8rem;
         }
 
-        /* MENU - EMPILHADO E CENTRALIZADO */
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             font-weight: 600;
-            padding: 0.4rem 0.8rem;
-            border-radius: 30px;
-            transition: all 0.2s ease;
-            background: rgba(255,255,240,0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            transition: all 0.25s ease;
+            background: rgba(255,255,240,0.08);
             color: #FFF5E6;
-            font-size: 0.75rem;
+            font-size: 0.95rem;
+            backdrop-filter: blur(4px);
         }
 
         .nav-links a:hover {
             background: #F97316;
             color: #0A2B4E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(249,115,22,0.3);
         }
 
-        /* BOTÕES SOCIAIS */
         .social-buttons {
             display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            width: 100%;
+            gap: 1rem;
+            margin-left: 0.5rem;
         }
 
         .btn-wa, .btn-ig {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 0.4rem 1rem;
+            gap: 8px;
+            padding: 0.6rem 1.4rem;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.8rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             transition: 0.2s;
             text-decoration: none;
             color: white;
-            flex: 0.4;
-            max-width: 130px;
+            backdrop-filter: blur(4px);
         }
 
         .btn-wa {
             background: #25D366;
+            box-shadow: 0 4px 10px rgba(37,211,102,0.3);
+        }
+        .btn-wa:hover {
+            background: #20b859;
+            transform: scale(1.02);
         }
         .btn-ig {
             background: radial-gradient(circle at 30% 110%, #fdf497, #fd5949, #d6249f, #285AEB);
+            box-shadow: 0 4px 10px rgba(214, 41, 118, 0.3);
+        }
+        .btn-ig:hover {
+            transform: scale(1.02);
         }
 
-        /* HERO - MENOR */
         .hero {
             background: linear-gradient(112deg, #EFF4FF 0%, #FFE8D9 100%);
-            padding: 1.5rem 1rem;
+            padding: 3rem 2rem;
             text-align: center;
+            border-bottom: 1px solid #FEC89A;
         }
         .hero h1 {
-            font-size: 1.6rem;
+            font-size: 2.7rem;
             font-weight: 800;
             color: #0A2B4E;
         }
         .hero p {
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             max-width: 700px;
-            margin: 0.5rem auto 0;
+            margin: 1rem auto 0;
             color: #C2410C;
+            font-weight: 500;
         }
 
-        /* CONTAINER */
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 2rem;
         }
 
-        /* TÍTULOS DAS SEÇÕES - MENORES */
         .section-title {
-            font-size: 1.4rem;
+            font-size: 2rem;
             font-weight: 700;
-            border-left: 4px solid #F97316;
-            padding-left: 0.8rem;
-            margin: 1.5rem 0 1rem 0;
+            border-left: 6px solid #F97316;
+            padding-left: 1rem;
+            margin: 2rem 0 1.5rem 0;
             color: #0A2B4E;
         }
-
-        /* GRID DE PRODUTOS - 1 POR LINHA NO CELULAR */
         .products-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 2rem;
         }
-
         .product-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: all 0.2s ease;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
             border: 1px solid rgba(249,115,22,0.2);
         }
-
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 40px rgba(249,115,22,0.2);
+        }
         .product-img {
             width: 100%;
-            height: 180px;
+            height: 240px;
             object-fit: cover;
             background: #f2e8d5;
         }
-
         .product-info {
-            padding: 1rem;
+            padding: 1.5rem;
         }
-
         .product-info h3 {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             color: #1E3A5F;
         }
-
         .product-category {
             display: inline-block;
             background: #FFF0E5;
-            padding: 0.2rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.65rem;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #F97316;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
-
         .product-desc {
             color: #2c4a41;
             line-height: 1.4;
-            margin-bottom: 0.8rem;
-            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
-
         .price-contact {
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: #EA580C;
-            margin-top: 0.3rem;
-            display: inline-flex;
+            margin-top: 0.5rem;
+            display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: #FFF0E5;
-            padding: 0.3rem 0.8rem;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
+            width: fit-content;
         }
-
         .btn-order {
             background: #0A2B4E;
             border: none;
-            padding: 0.6rem 0.8rem;
+            padding: 0.7rem 1rem;
             border-radius: 40px;
             color: white;
             font-weight: 600;
             width: 100%;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
             cursor: pointer;
             transition: 0.2s;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
         }
+        .btn-order:hover {
+            background: #F97316;
+            color: #0A2B4E;
+        }
 
-        /* MARCAS - MENORES */
         .brands-section {
             background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%);
-            border-radius: 32px;
-            padding: 1.2rem;
-            margin: 1.5rem 0;
+            border-radius: 48px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(249,115,22,0.3);
         }
         .brands-title {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #0A2B4E;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .brands-title span {
+            color: #F97316;
         }
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 0.8rem;
+            gap: 2.5rem;
         }
         .brand-item {
             background: white;
-            border-radius: 16px;
-            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            padding: 1rem 1.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            min-width: 100px;
-            height: 60px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            min-width: 140px;
+            height: 90px;
+        }
+        .brand-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(249,115,22,0.15);
+            border: 1px solid #F97316;
         }
         .brand-item img {
-            max-width: 80px;
-            max-height: 40px;
+            max-width: 130px;
+            max-height: 60px;
             object-fit: contain;
         }
 
-        /* INFO SECTION - MENOR */
         .info-section {
-            border-radius: 32px;
-            margin: 1.5rem 0;
-            padding: 1.2rem;
+            background: #ffffffdd;
+            border-radius: 48px;
+            margin: 3rem 0;
+            padding: 2rem;
             background: linear-gradient(125deg, #FFF8F0 0%, #ffffff 100%);
             border: 1px solid #FBC490;
         }
         .info-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
             justify-content: space-between;
         }
         .info-card {
             flex: 1;
-            min-width: 150px;
+            min-width: 200px;
             background: rgba(255,245,225,0.5);
-            border-radius: 24px;
-            padding: 1rem;
+            border-radius: 32px;
+            padding: 1.5rem;
             text-align: center;
         }
         .info-card h4 {
-            font-size: 1.2rem;
+            font-size: 1.6rem;
             color: #EA580C;
         }
-        .info-card p {
-            font-size: 0.8rem;
-        }
 
-        /* HORÁRIOS */
         .schedule-box {
             background: #0A2B4E;
-            border-radius: 24px;
-            padding: 1rem;
-            margin: 1rem 0;
+            border-radius: 32px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             color: white;
         }
         .schedule-box h3 {
             color: #F97316;
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
+            margin-bottom: 1rem;
         }
         .schedule-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
             justify-content: space-between;
         }
         .schedule-item {
             flex: 1;
-            min-width: 150px;
-            font-size: 0.75rem;
+            min-width: 200px;
         }
         .gift-badge {
             background: #F97316;
             color: #0A2B4E;
-            padding: 0.4rem 0.8rem;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
             display: inline-block;
             font-weight: bold;
-            font-size: 0.75rem;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
         }
 
-        /* RODAPÉ */
         footer {
             background: #0A2B4E;
             color: #d9e3df;
-            padding: 1.2rem;
+            padding: 2rem;
             text-align: center;
-            margin-top: 2rem;
-            font-size: 0.7rem;
-            border-radius: 24px 24px 0 0;
+            margin-top: 3rem;
+            border-radius: 32px 32px 0 0;
         }
         footer a {
             color: #FFB347;
             text-decoration: none;
         }
 
-        /* CHAMADA FINAL */
-        .whatsapp-call {
-            background: #FFE5CC;
-            border-radius: 32px;
-            padding: 1.2rem;
-            text-align: center;
-            margin: 1.5rem 0;
+        @media (max-width: 880px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .social-buttons {
+                justify-content: center;
+                margin-left: 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
-        .whatsapp-call h2 {
-            font-size: 1.2rem;
-            color: #0A2B4E;
-        }
-        .whatsapp-button {
-            display: inline-flex;
-            background: #25D366;
-            color: white;
-            padding: 10px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            margin-top: 0.8rem;
+        @media (max-width: 560px) {
+            .container {
+                padding: 1rem;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* ÍCONES SOCIAIS */
         .wa-icon, .ig-icon {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             display: inline-block;
             background-size: contain;
             background-repeat: no-repeat;
@@ -386,62 +391,23 @@
         .ig-icon {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3CradialGradient id='grad' cx='30%25' cy='60%25' r='80%25'%3E%3Cstop offset='0%25' stop-color='%23fdf497'/%3E%3Cstop offset='30%25' stop-color='%23fd5949'/%3E%3Cstop offset='70%25' stop-color='%23d6249f'/%3E%3Cstop offset='100%25' stop-color='%23285AEB'/%3E%3C/radialGradient%3E%3Cpath fill='url(%23grad)' d='M24 8c4.2 0 4.7 0 6.4.1 1.5.1 2.5.3 3.4.6.9.3 1.7.7 2.4 1.4.7.7 1.1 1.5 1.4 2.4.3.9.5 1.9.6 3.4.1 1.7.1 2.2.1 6.4s0 4.7-.1 6.4c-.1 1.5-.3 2.5-.6 3.4-.3.9-.7 1.7-1.4 2.4-.7.7-1.5 1.1-2.4 1.4-.9.3-1.9.5-3.4.6-1.7.1-2.2.1-6.4.1s-4.7 0-6.4-.1c-1.5-.1-2.5-.3-3.4-.6-.9-.3-1.7-.7-2.4-1.4-.7-.7-1.1-1.5-1.4-2.4-.3-.9-.5-1.9-.6-3.4-.1-1.7-.1-2.2-.1-6.4s0-4.7.1-6.4c.1-1.5.3-2.5.6-3.4.3-.9.7-1.7 1.4-2.4.7-.7 1.5-1.1 2.4-1.4.9-.3 1.9-.5 3.4-.6 1.7-.1 2.2-.1 6.4-.1z'/%3E%3Ccircle fill='%23ffffff' cx='24' cy='24' r='7'/%3E%3Cpath fill='%23ffffff' d='M33 13.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z'/%3E%3C/svg%3E");
         }
-
-        /* ============================================ */
-        /* AJUSTES EXCLUSIVOS PARA CELULAR - NAVBAR MAIS COMPACTA */
-        /* ============================================ */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.3rem 0.6rem !important;
-                gap: 0.3rem !important;
-            }
-            
-            .logo-img {
-                height: 35px !important;
-            }
-            
-            .tagline {
-                font-size: 0.55rem !important;
-                padding-left: 0.3rem !important;
-            }
-            
-            .nav-links {
-                gap: 0.2rem !important;
-            }
-            
-            .nav-links a {
-                padding: 0.25rem 0.5rem !important;
-                font-size: 0.65rem !important;
-            }
-            
-            .social-buttons {
-                gap: 0.4rem !important;
-            }
-            
-            .btn-wa, .btn-ig {
-                padding: 0.25rem 0.6rem !important;
-                font-size: 0.65rem !important;
-                max-width: 110px !important;
-            }
-            
-            .wa-icon, .ig-icon {
-                width: 12px !important;
-                height: 12px !important;
-            }
-        }
     </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="logo-area">
+        <!-- ⬇️⬇️⬇️ COLOQUE O NOME DO SEU ARQUIVO PNG AQUI ⬇️⬇️⬇️ -->
         <img src="LOGO-EXPRESSO-GÁS-VETORIZADO.png" alt="Expresso Gás" class="logo-img">
+        <!-- ⬆️⬆️⬆️ MUDE SOMENTE O "logo.png" para o nome do seu arquivo ⬆️⬆️⬆️ -->
         <span class="tagline">água & gás • entrega rápida</span>
     </div>
     <div class="nav-links">
         <a href="#produtos-gas">Gás P13</a>
         <a href="#produtos-gas">Gás P45</a>
-        <a href="#produtos-agua">Água</a>
+        <a href="#produtos-agua">Água Mineral</a>
+        <a href="#produtos-agua">Galão 20L</a>
+        <a href="#produtos-agua">Galão 10L</a>
         <a href="#acessorios">Acessórios</a>
         <a href="#sobre">Diferenciais</a>
     </div>
@@ -457,20 +423,20 @@
 
 <section class="hero">
     <h1> Entregamos conforto e segurança</h1>
-    <p>Gás, água e acessórios. Peça pelo WhatsApp e receba em casa.</p>
+    <p>Gás de cozinha, água purificada e acessórios. Peça pelo WhatsApp e receba em casa com atendimento de qualidade.</p>
 </section>
 
 <main class="container">
     <h2 id="produtos-gas" class="section-title">🔥 Botijões de Gás</h2>
     <div class="products-grid">
         <div class="product-card">
-            <img class="product-img" src="imagens/botijao-p13.png" alt="Botijão P13">
+            <img class="product-img" src="imagens/botijao-p13.png" alt="Botijão de gás P13">
             <div class="product-info">
                 <span class="product-category">Gás Liquefeito</span>
                 <h3>Botijão P13</h3>
-                <p class="product-desc">Ideal para residências. Capacidade 13kg.</p>
-                <div class="price-contact">💰 Consulte o preço</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Olá! Preço do BOTIJÃO P13','_blank')">📦 Consultar</button>
+                <p class="product-desc">Ideal para residências. Capacidade 13kg, alta durabilidade e segurança.</p>
+                <div class="price-contact">💰 Consulte o preço via WhatsApp</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Olá!%20Gostaria%20de%20saber%20o%20preço%20do%20BOTIJÃO%20P13','_blank')">📦 Consultar preço</button>
             </div>
         </div>
         <div class="product-card">
@@ -478,70 +444,53 @@
             <div class="product-info">
                 <span class="product-category">Gás Industrial</span>
                 <h3>Botijão P45</h3>
-                <p class="product-desc">Perfeito para restaurantes e comércios.</p>
-                <div class="price-contact">💰 Consulte o preço</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço do botijão P45','_blank')">📦 Consultar</button>
+                <p class="product-desc">Perfeito para restaurantes e comércios. 45kg de potência.</p>
+                <div class="price-contact">💰 Consulte o preço via WhatsApp</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Quero%20saber%20o%20preço%20do%20botijão%20P45','_blank')">📦 Consultar preço</button>
             </div>
         </div>
         <div class="product-card" style="border: 2px solid #F97316;">
             <img class="product-img" src="https://placehold.co/600x400/F97316/FFF?text=BRINDE" alt="Brinde">
             <div class="product-info">
-                <span class="product-category">🎁 BRINDE</span>
+                <span class="product-category">🎁 BRINDE EXCLUSIVO</span>
                 <h3>Todo pedido de Gás ganha brinde!</h3>
-                <p class="product-desc">Brinde especial na entrega!</p>
-                <div class="price-contact">🎉 Cortesia</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Quero pedir gás e ganhar brinde','_blank')">🎁 Pedir</button>
+                <p class="product-desc">Nas entregas de botijão, você recebe um brinde especial!</p>
+                <div class="price-contact">🎉 Brinde por cortesia</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Quero%20pedir%20gás%20e%20ganhar%20brinde','_blank')">🎁 Pedir gás</button>
             </div>
         </div>
     </div>
 
     <h2 id="produtos-agua" class="section-title">💧 Água Purificada & Mineral</h2>
     <div class="products-grid">
-        <!-- 1º: Galão Ibirá -->
-        <div class="product-card">
-            <img class="product-img" src="imagens/galao-ibira-ergo.png" alt="Galão Ibirá">
-            <div class="product-info">
-                <span class="product-category">Água Mineral</span>
-                <h3>Galão Ibirá</h3>
-                <p class="product-desc">Água de qualidade com a confiança da marca Ibirá.</p>
-                <div class="price-contact">💰 Consulte o preço</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço Galão Ibirá','_blank')">💧 Consultar</button>
-            </div>
-        </div>
-
-        <!-- 2º: Galão 20L -->
         <div class="product-card">
             <img class="product-img" src="imagens/galao-20l.png" alt="Galão 20L">
             <div class="product-info">
                 <span class="product-category">Água Mineral</span>
                 <h3>Galão 20L</h3>
-                <p class="product-desc">Água cristalina, pH equilibrado.</p>
-                <div class="price-contact">💰 Consulte o preço</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço Galão 20L','_blank')">💧 Consultar</button>
+                <p class="product-desc">Água cristalina, pH equilibrado, garrafa retornável.</p>
+                <div class="price-contact">💰 Consulte o preço via WhatsApp</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Quero%20saber%20preço%20Galão%2020L','_blank')">💧 Consultar preço</button>
             </div>
         </div>
-
-        <!-- 3º: Galão 10L -->
         <div class="product-card">
             <img class="product-img" src="imagens/galao-10l.png" alt="Galão 10L">
             <div class="product-info">
                 <span class="product-category">Água Mineral</span>
                 <h3>Galão 10L</h3>
-                <p class="product-desc">Prático e leve, pequenos espaços.</p>
-                <div class="price-contact">💰 Consulte o preço</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço Galão 10L','_blank')">💧 Consultar</button>
+                <p class="product-desc">Prático e leve, perfeito para pequenos espaços.</p>
+                <div class="price-contact">💰 Consulte o preço via WhatsApp</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Quero%20preço%20Galão%2010L','_blank')">💧 Consultar preço</button>
             </div>
         </div>
-
-        <!-- 4º: Pack 12x 500ml -->
         <div class="product-card">
             <img class="product-img" src="imagens/500ml.png" alt="Pack 500ml">
             <div class="product-info">
                 <span class="product-category">Água Pura</span>
-                <h3>Pack 12x 500ml</h3>
-                <p class="product-desc">Para consumo individual e eventos.</p>
-                <div class="price-contact">💰 Consulte o preço</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço pack 500ml','_blank')">💧 Consultar</button>
+                <h3>Pack 12x Garrafas 500ml</h3>
+                <p class="product-desc">Prático para consumo individual e eventos.</p>
+                <div class="price-contact">💰 Consulte o preço via WhatsApp</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Quero%20preço%20pack%20500ml','_blank')">💧 Consultar preço</button>
             </div>
         </div>
     </div>
@@ -552,10 +501,10 @@
             <img class="product-img" src="imagens/regulador.png" alt="Kit regulador">
             <div class="product-info">
                 <span class="product-category">Segurança</span>
-                <h3>Kit Regulador</h3>
-                <p class="product-desc">Certificado Inmetro.</p>
-                <div class="price-contact">💰 Consulte</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço Kit Regulador','_blank')">🔧 Consultar</button>
+                <h3>Kit Regulador de Pressão</h3>
+                <p class="product-desc">Regulador certificado Inmetro.</p>
+                <div class="price-contact">💰 Consulte o preço</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço%20Kit%20Regulador','_blank')">🔧 Consultar</button>
             </div>
         </div>
         <div class="product-card">
@@ -563,9 +512,9 @@
             <div class="product-info">
                 <span class="product-category">Apoio</span>
                 <h3>Suporte para Galão</h3>
-                <p class="product-desc">Resistente e prático.</p>
-                <div class="price-contact">💰 Consulte</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço Suporte Galão','_blank')">💧 Consultar</button>
+                <p class="product-desc">Suporte resistente para galões.</p>
+                <div class="price-contact">💰 Consulte o preço</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço%20Suporte%20Galão','_blank')">💧 Consultar</button>
             </div>
         </div>
         <div class="product-card">
@@ -573,9 +522,9 @@
             <div class="product-info">
                 <span class="product-category">Acessório</span>
                 <h3>Bomba de Água Manual</h3>
-                <p class="product-desc">Fácil instalação.</p>
-                <div class="price-contact">💰 Consulte</div>
-                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço Bomba Manual','_blank')">🚰 Consultar</button>
+                <p class="product-desc">Fácil instalação, ideal para galões.</p>
+                <div class="price-contact">💰 Consulte o preço</div>
+                <button class="btn-order" onclick="window.open('https://wa.me/5515997254211?text=Preço%20Bomba%20Manual','_blank')">🚰 Consultar</button>
             </div>
         </div>
     </div>
@@ -593,30 +542,30 @@
     </div>
 
     <div id="sobre" class="info-section">
-        <h2 style="font-size:1.3rem; margin-bottom:1rem;">📦 Por que escolher a Expresso Gás?</h2>
+        <h2 style="font-size:1.9rem; margin-bottom:1.5rem;">📦 Por que escolher a Expresso Gás?</h2>
         <div class="info-flex">
-            <div class="info-card"><h4>🔐 Segurança</h4><p>Botijões com lacre</p></div>
-            <div class="info-card"><h4>💳 Pagamento fácil</h4><p>PIX, cartão, dinheiro</p></div>
-            <div class="info-card"><h4>♻️ Sustentabilidade</h4><p>Reciclamos vasilhames</p></div>
+            <div class="info-card"><h4>🔐 Segurança</h4><p>Botijões com lacre e válvulas novas.</p></div>
+            <div class="info-card"><h4>💳 Pagamento fácil</h4><p>Dinheiro, PIX, cartão na entrega.</p></div>
+            <div class="info-card"><h4>♻️ Sustentabilidade</h4><p>Recolhemos vasilhames vazios.</p></div>
         </div>
         <div class="schedule-box">
             <h3>🕒 Horário de Funcionamento</h3>
             <div class="schedule-grid">
-                <div class="schedule-item"><strong>📆 Atendimento:</strong><br>Seg-Sex: 08h-20h<br>Sáb: 08h-15h<br>Dom: FECHADO</div>
-                <div class="schedule-item"><strong>💧 Pedidos de Água:</strong><br>Seg-Sex: até 16:30<br>Sáb: até 12:30</div>
-                <div class="schedule-item"><strong>🔥 Gás:</strong><br>🔔 Brinde especial!</div>
+                <div class="schedule-item"><p><strong>📆 Atendimento:</strong></p><p>Seg-Sex: 08h às 20h</p><p>Sáb: 08h às 15h</p><p>Dom: FECHADO</p></div>
+                <div class="schedule-item"><p><strong>💧 Pedidos de Água:</strong></p><p>Seg-Sex: até 16:30</p><p>Sáb: até 12:30</p></div>
+                <div class="schedule-item"><p><strong>🔥 Gás:</strong></p><p>🔔 Brinde especial!</p></div>
             </div>
             <div class="gift-badge">🎁 Toda entrega de GÁS ganha brinde! 🎁</div>
         </div>
-        <div style="margin-top:1rem; background:#FAF0E1; border-radius:24px; padding:1rem;">
-            <h3 style="color:#EA580C; font-size:1rem;">🏠 Endereço:</h3>
-            <p style="font-size:0.8rem;"><strong>Rua Garcia Redondo, 45 - Vila Jardini, Sorocaba/SP | CEP 18044-280</strong></p>
+        <div style="margin-top:2rem; background:#FAF0E1; border-radius:40px; padding:1.5rem;">
+            <h3 style="color:#EA580C;">🏠 Endereço:</h3>
+            <p><strong>Rua Garcia Redondo, 45 - Vila Jardini, Sorocaba/SP | CEP 18044-280</strong></p>
         </div>
     </div>
 
-    <div class="whatsapp-call">
-        <h2>🚚 Peça pelo WhatsApp!</h2>
-        <a href="https://wa.me/5515997254211" target="_blank" class="whatsapp-button">💬 Falar com a Expresso Gás</a>
+    <div style="background:#FFE5CC; border-radius:48px; padding:2rem; text-align:center; margin:2rem 0;">
+        <h2 style="color:#0A2B4E;">🚚 Peça pelo WhatsApp!</h2>
+        <a href="https://wa.me/5515997254211" target="_blank" style="display:inline-flex; background:#25D366; color:white; padding:14px 32px; border-radius:60px; text-decoration:none; font-weight:bold; font-size:1.2rem; margin-top:1rem;">💬 Falar com a Expresso Gás</a>
     </div>
 </main>
 
